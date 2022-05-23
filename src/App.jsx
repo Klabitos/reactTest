@@ -1,33 +1,32 @@
-import { useState, useEffect } from "react";
-import * as API from "./services/starWars"
 import logo from "./assets/logo-starWars.png"
-import { Heading,  Image,  } from '@chakra-ui/react'
-import { Personaje } from './components/Personaje'
 import { Navbar } from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import { Image } from '@chakra-ui/react'
+import {Home} from './views/Home'
+import {Naves} from './views/Naves'
+import {Personajes} from './views/Personajes'
+import {Planetas} from './views/Planetas'
 import './style/style.css'
+import { PersonaDetalle } from "./views/PersonaDetalle";
+import { PlanetaDetalle } from "./views/PlanetaDetalle";
+import { NaveDetalle } from "./views/NaveDetalle";
 
 export  function App() {
 
-  const [people, setPeople] = useState([]);
-
-
-  useEffect(()=>{
-    API.getAllPeople().then((data)=>setPeople(data.results)).catch(console.log);
-  },[]);
-  
   return (
     <div className="mainContainer">
       <Navbar/>
       <Image src={logo} alt="" height={150} width={300} className="centrado"/>  {/* Importante cerrar la tag*/}
-      <Heading as='h1' className="mt-3">Personajes</Heading>      
-      {people.length<1?
-        <p>Loading...</p>
-      :<ul className="listaPersonajes">
-        {people.map((persona)=>(
-            <Personaje key={persona.name} {...persona} prueba="*" className="mt-2 ms-1 me-1 "/>  
-          ))} {/* Distintas maneras de props*/}
-      </ul>}
-      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="personajes" element={<Personajes />} />
+        <Route path="planetas" element={<Planetas />} />
+        <Route path="naves" element={<Naves />} />
+
+        <Route path="personaje/:nombre" element={<PersonaDetalle />} />
+        <Route path="nave/:nombre" element={<NaveDetalle />} />
+        <Route path="planeta/:nombre" element={<PlanetaDetalle />} />
+      </Routes>
     </div>
   )
 }

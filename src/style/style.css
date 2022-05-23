@@ -53,3 +53,9 @@ a:link{
 .z-index-alto{
     z-index: 1000;
 }
+
+.textoInicio{
+    border: 1px solid black;
+    text-align: justify;
+    padding: 10px;
+}
