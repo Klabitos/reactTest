@@ -1,0 +1,55 @@
+.mainContainer{
+    width: 70%;
+    margin: 1%;
+    padding: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: gray;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+}
+
+.centrado{
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.listaPersonajes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.menu{
+    background-color: rgb(95, 95, 95);
+    border: 1px solid black;
+    padding: 10px;
+    color: white;
+    position: sticky;
+    top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.padreElementosMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.padreElementosMenu *{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.z-index-alto{
+    z-index: 1000;
+}
