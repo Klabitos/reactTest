@@ -21,8 +21,11 @@ export function Personajes(){
                 <p>Loading...</p>
             :<ul className="listaPersonajes">
                 {people.map((persona)=>(
-                    <Personaje key={persona.name} {...persona} prueba="*" className="mt-2 ms-1 me-1 "/>  
+                    <Personaje key={persona.name} persona={persona} prueba="*" className="mt-2 ms-1 me-1 "/>  
                 ))} {/* Distintas maneras de props*/}
+
+                 {/* También podemos añadir props pasando todas las propiedades de persona separadas en vez de dentro de un objeto persona*/}
+                 {/* Para ellos simplemente ponemos {...persona} asi dentro del componente iran en el props, en vez de en props.persona */}
             </ul>}
         </>
     )

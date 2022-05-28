@@ -4,7 +4,7 @@ const api = "https://swapi.dev/api/";
 export async function getAllPeople(){
     const response = await fetch(`${api}people`);
     const data = await response.json();
-    console.log(data) //HACEMOS CONSOLE LOG PARA VER EL FORMATO DE LA REPSUESTA
+    //console.log(data) //HACEMOS CONSOLE LOG PARA VER EL FORMATO DE LA REPSUESTA
     return data;
 }
 
